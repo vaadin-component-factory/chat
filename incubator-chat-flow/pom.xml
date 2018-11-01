@@ -75,7 +75,7 @@
                             <AdVaaPkg>com.vaadin.incubator.chat</AdVaaPkg>
                             <!-- Implementation-Title and Implementation-Version
                                 come from the POM by default -->
-                            <Implementation-Title>Incubator Breadcrumb</Implementation-Title>
+                            <Implementation-Title>Incubator Chat</Implementation-Title>
                         </manifestEntries>
                     </archive>
                 </configuration>
