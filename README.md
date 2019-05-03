@@ -1,9 +1,9 @@
-# Incubator Chat for Flow
+# Chat
 
-Incubator Chat for Flow is server-side component of [incubator-chat](https://github.com/vaadin/incubator-chat) web component for Vaadin 10. 
+Chat is server-side component of [vcf-chat](https://github.com/vaadin-component-factory/vcf-chat) web component for Vaadin 10. 
 It is a Web Component providing an easy way to display chat on web pages.
 
-[<img src="https://raw.githubusercontent.com/vaadin/incubator-chat/master/screenshot.png" width="400" alt="Screenshot of incubator-chat">](https://vaadin.com/directory/components/vaadinincubator-chat)
+[<img src="https://raw.githubusercontent.com/vaadin/vcf-chat/master/screenshot.png" width="400" alt="Screenshot of vcf-chat">](https://vaadin.com/directory/components/vaadinvcf-chat)
 ## Usage
 
 Create instance of `Chat`. You can set messages using `setMessages(List<Messages>)` method.
@@ -19,18 +19,18 @@ After adding list of messages you, more likely, would like to scroll chat to the
 where newer messages are. You can do that by calling method `scrollToBottom()`.
 
 Chat have text input and Send button. Clicking Send button or clicking `Ctrl+Enter` will dispatch 
-`incubator-chat-new-message` event with users message as parameter.
+`vcf-chat-new-message` event with users message as parameter.
 
 Use `addChatNewMessageListener(ComponentEventListener)` to handle event. You can add message to bottom of chat 
 using method `addNewMessage(Message)`. After message is added you can clear input by calling `clearInput`
 on chat instance.
 
 When user scrolls messages towards top and `scrollTop` value is smaller then `lazyLoadTriggerOffset`
-parameter of Chat instance, event `incubator-chat-trigger-lazy-load` will be raised(and will be raising on every
+parameter of Chat instance, event `vcf-chat-trigger-lazy-load` will be raised(and will be raising on every
 scroll event with debounce time set in `debouncePeriod` parameter of chat instance). 
 
 Use `addLazyLoadTriggerEvent(ComponentEventListener)` to handle event. You can add older messages
-to top of chat using method `addMessagesToTop(List<Message>)`. When `incubator-chat-trigger-lazy-load` event 
+to top of chat using method `addMessagesToTop(List<Message>)`. When `vcf-chat-trigger-lazy-load` event 
 is triggered, loading indication is shown in chat and can be disabled by calling `setLoading(false)` method 
 on chat instance. Loading also can be enabled manually by calling same method with `true` value.
 
@@ -72,7 +72,7 @@ loading indicator, but it can be overriden by custom component using method `set
 
 
 ## Demo
-To run demo go to `incubator-chat-flow-vaadincom-demo/` subfolder and run `mbn jetty:run`.
+To run demo go to `chat-demo/` subfolder and run `mbn jetty:run`.
 After server startup, you'll be able find demo at [http://localhost:8080/chat](http://localhost:8080/chat)
 
 ## Setting up for development:
@@ -80,7 +80,7 @@ After server startup, you'll be able find demo at [http://localhost:8080/chat](h
 Clone the project in GitHub (or fork it if you plan on contributing)
 
 ```
-https://github.com/vaadin/incubator-chat-flow
+https://github.com/vaadin-component-factory/chat
 ```
 
 To build and install the project into the local repository run 
@@ -91,5 +91,5 @@ To build and install the project into the local repository run
 
 This Add-on is distributed under [Commercial Vaadin Add-on License version 3](http://vaadin.com/license/cval-3) (CVALv3). For license terms, see LICENSE.txt.
 
-Incubator Chat is written by Vaadin Ltd.
+Chat is written by Vaadin Ltd.
 

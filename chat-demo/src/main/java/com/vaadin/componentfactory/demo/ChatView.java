@@ -1,9 +1,9 @@
-package com.vaadin.flow.component.incubator.vaadincom;
+package com.vaadin.componentfactory.demo;
 
+import com.vaadin.componentfactory.Chat;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.incubator.Chat;
-import com.vaadin.flow.component.incubator.model.Message;
+import com.vaadin.componentfactory.model.Message;
 import com.vaadin.flow.demo.DemoView;
 import com.vaadin.flow.router.Route;
 

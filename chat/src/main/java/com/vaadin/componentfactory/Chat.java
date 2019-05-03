@@ -1,4 +1,4 @@
-package com.vaadin.flow.component.incubator;
+package com.vaadin.componentfactory;
 
 /*
  * #%L
@@ -8,10 +8,10 @@ package com.vaadin.flow.component.incubator;
  * %%
  * This program is available under Commercial Vaadin Add-On License 3.0
  * (CVALv3).
- * 
+ *
  * See the file license.html distributed with this software for more
  * information about licensing.
- * 
+ *
  * You should have received a copy of the CVALv3 along with this program.
  * If not, see <http://vaadin.com/license/cval-3>.
  * #L%
@@ -19,7 +19,7 @@ package com.vaadin.flow.component.incubator;
 
 import com.vaadin.flow.component.*;
 import com.vaadin.flow.component.dependency.HtmlImport;
-import com.vaadin.flow.component.incubator.model.Message;
+import com.vaadin.componentfactory.model.Message;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.shared.Registration;
@@ -29,23 +29,23 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Server-side component for the <code>incubator-chat</code> element.
+ * Server-side component for the <code>vcf-chat</code> element.
  * It is a Web Component providing an easy way to display chat on web pages
  *
  * @author Vaadin Ltd
  */
-@Tag("incubator-chat")
-@HtmlImport("frontend://bower_components/incubator-chat/src/incubator-chat.html")
+@Tag("vcf-chat")
+@HtmlImport("frontend://bower_components/vcf-chat/src/vcf-chat.html")
 public class Chat extends PolymerTemplate<Chat.ChatModel> {
     /**
-     * `incubator-chat-trigger-lazy-load` is send when user scrolled almost to the top of message list
+     * `vcf-chat-trigger-lazy-load` is send when user scrolled almost to the top of message list
      *  It fires all the time when user scroll list and scrollTop value is less or equals lazyLoadTriggerOffset,
      *  with debounce time set in parameter debouncePeriod
      *
      *  @see #setDebouncePeriod(int)
      *  @see #setLazyLoadTriggerOffset(int)
      */
-    @DomEvent("incubator-chat-trigger-lazy-load")
+    @DomEvent("vcf-chat-trigger-lazy-load")
     public static class LazyLoadTriggerEvent extends ComponentEvent<Chat> {
         public LazyLoadTriggerEvent(Chat source, boolean fromClient) {
             super(source, fromClient);
@@ -53,10 +53,10 @@ public class Chat extends PolymerTemplate<Chat.ChatModel> {
     }
 
     /**
-     * `incubator-chat-new-message` is sent when the user clicks Send button.
+     * `vcf-chat-new-message` is sent when the user clicks Send button.
      * Event contains message that user typed in input form
      */
-    @DomEvent("incubator-chat-new-message")
+    @DomEvent("vcf-chat-new-message")
     public static class ChatNewMessageEvent extends ComponentEvent<Chat> {
         private final String message;
 
@@ -89,7 +89,7 @@ public class Chat extends PolymerTemplate<Chat.ChatModel> {
     }
 
     /**
-     * Adds `incubator-chat-trigger-lazy-load` event listener
+     * Adds `vcf-chat-trigger-lazy-load` event listener
      */
     public Registration addLazyLoadTriggerEvent(
             ComponentEventListener<LazyLoadTriggerEvent> listener) {
@@ -97,7 +97,7 @@ public class Chat extends PolymerTemplate<Chat.ChatModel> {
     }
 
     /**
-     * Adds `incubator-chat-new-message` event listener
+     * Adds `vcf-chat-new-message` event listener
      */
     public Registration addChatNewMessageListener(
             ComponentEventListener<ChatNewMessageEvent> listener) {
@@ -157,7 +157,7 @@ public class Chat extends PolymerTemplate<Chat.ChatModel> {
     }
 
     /**
-     * Sets distance from top of chat, as threshold for raising 'incubator-chat-trigger-lazy-load' events
+     * Sets distance from top of chat, as threshold for raising 'vcf-chat-trigger-lazy-load' events
      *
      * @param number
      *                  distance in pixels
@@ -167,7 +167,7 @@ public class Chat extends PolymerTemplate<Chat.ChatModel> {
     }
 
     /**
-     * Returns parameter lazyLoadTriggerOffset which is threshold for raising 'incubator-chat-trigger-lazy-load' events
+     * Returns parameter lazyLoadTriggerOffset which is threshold for raising 'vcf-chat-trigger-lazy-load' events
      *
      * @return lazyLoadTriggerOffset
      *                                  distance in pixels
@@ -177,7 +177,7 @@ public class Chat extends PolymerTemplate<Chat.ChatModel> {
     }
 
     /**
-     *  Setting debounce period for triggering 'incubator-chat-trigger-lazy-load' event
+     *  Setting debounce period for triggering 'vcf-chat-trigger-lazy-load' event
      *
      * @param number
      *                  debounce time in milliseconds
@@ -187,7 +187,7 @@ public class Chat extends PolymerTemplate<Chat.ChatModel> {
     }
 
     /**
-     * Getting debounce period for triggering 'incubator-chat-trigger-lazy-load' event
+     * Getting debounce period for triggering 'vcf-chat-trigger-lazy-load' event
      * @return debounce time in miliseconds
      */
     public int getDebouncePeriod(){
@@ -214,7 +214,7 @@ public class Chat extends PolymerTemplate<Chat.ChatModel> {
     }
 
     /**
-     * This model binds properties between java(Chat) and polymer(incubator-chat.html)
+     * This model binds properties between java(Chat) and polymer(vcf-chat.html)
      */
     public interface ChatModel extends TemplateModel {
         void setMessages(List<Message> messages);
