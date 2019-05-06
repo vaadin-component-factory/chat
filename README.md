@@ -1,9 +1,13 @@
-# Chat
+# Component Factory Chat for Vaadin 10+
 
-Chat is server-side component of [vcf-chat](https://github.com/vaadin-component-factory/vcf-chat) web component for Vaadin 10. 
+This is server-side component of [&lt;vcf-chat&gt;](https://github.com/vaadin-component-factory/vcf-chat) Web Component.
 It is a Web Component providing an easy way to display chat on web pages.
 
-[<img src="https://raw.githubusercontent.com/vaadin/vcf-chat/master/screenshot.png" width="400" alt="Screenshot of vcf-chat">](https://vaadin.com/directory/components/vaadinvcf-chat)
+[Live Demo ↗](https://incubator.app.fi/chat-demo/chat)
+
+
+<img src="https://raw.githubusercontent.com/vaadin/incubator-chat/master/screenshot.png" width="400" alt="Screenshot of vcf-chat">
+
 ## Usage
 
 Create instance of `Chat`. You can set messages using `setMessages(List<Messages>)` method.
@@ -72,7 +76,7 @@ loading indicator, but it can be overriden by custom component using method `set
 
 
 ## Demo
-To run demo go to `chat-demo/` subfolder and run `mbn jetty:run`.
+To run demo go to `chat-demo/` subfolder and run `mvn jetty:run`.
 After server startup, you'll be able find demo at [http://localhost:8080/chat](http://localhost:8080/chat)
 
 ## Setting up for development:
@@ -87,7 +91,10 @@ To build and install the project into the local repository run
 
 ```mvn install ```
 
-## License & Author
+# Vaadin Prime
+This component is available in Vaadin Prime subscription. It is still open source, but you need to have a valid CVAL license in order to use it. Read more at: https://vaadin.com/pricing
+
+# License & Author
 
 This Add-on is distributed under [Commercial Vaadin Add-on License version 3](http://vaadin.com/license/cval-3) (CVALv3). For license terms, see LICENSE.txt.
 
