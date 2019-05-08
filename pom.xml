@@ -40,8 +40,8 @@
 	</properties>
 
 	<modules>
-		<!--<module>chat</module>-->
-		<!--<module>chat-demo</module>-->
+		<module>chat</module>
+		<module>chat-demo</module>
 	</modules>
 	<repositories>
 		<repository>
