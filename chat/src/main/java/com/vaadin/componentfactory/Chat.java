@@ -17,6 +17,8 @@ package com.vaadin.componentfactory;
 
 import com.vaadin.flow.component.*;
 import com.vaadin.flow.component.dependency.HtmlImport;
+import com.vaadin.flow.component.dependency.JsModule;
+import com.vaadin.flow.component.dependency.NpmPackage;
 import com.vaadin.componentfactory.model.Message;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
@@ -34,6 +36,8 @@ import java.util.Objects;
  */
 @Tag("vcf-chat")
 @HtmlImport("frontend://bower_components/vcf-chat/src/vcf-chat.html")
+@NpmPackage(value = "@vaadin-component-factory/vcf-chat", version = "1.2.0")
+@JsModule("@vaadin-component-factory/vcf-chat/src/vcf-chat.js")
 public class Chat extends PolymerTemplate<Chat.ChatModel> {
     /**
      * `vcf-chat-trigger-lazy-load` is send when user scrolled almost to the top of message list
