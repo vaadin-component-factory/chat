@@ -6,12 +6,17 @@ package com.vaadin.componentfactory;
  * %%
  * Copyright (C) 2017 - 2018 Vaadin Ltd
  * %%
- * This program is available under Commercial Vaadin Add-On License 3.0
- * (CVALv3).
- * See the file license.html distributed with this software for more
- * information about licensing.
- * You should have received a copy of the CVALv3 along with this program.
- * If not, see <http://vaadin.com/license/cval-3>.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  * #L%
  */
 
@@ -36,7 +41,7 @@ import java.util.Objects;
  */
 @Tag("vcf-chat")
 @HtmlImport("frontend://bower_components/vcf-chat/src/vcf-chat.html")
-@NpmPackage(value = "@vaadin-component-factory/vcf-chat", version = "1.2.0")
+@NpmPackage(value = "@vaadin-component-factory/vcf-chat", version = "1.2.2")
 @JsModule("@vaadin-component-factory/vcf-chat/src/vcf-chat.js")
 public class Chat extends PolymerTemplate<Chat.ChatModel> {
     /**
@@ -92,6 +97,9 @@ public class Chat extends PolymerTemplate<Chat.ChatModel> {
 
     /**
      * Adds `vcf-chat-trigger-lazy-load` event listener
+     *
+     * @param listener event listener
+     * @return Registration
      */
     public Registration addLazyLoadTriggerEvent(
             ComponentEventListener<LazyLoadTriggerEvent> listener) {
@@ -100,6 +108,9 @@ public class Chat extends PolymerTemplate<Chat.ChatModel> {
 
     /**
      * Adds `vcf-chat-new-message` event listener
+     *
+     * @param listener event listener
+     * @return Registration
      */
     public Registration addChatNewMessageListener(
             ComponentEventListener<ChatNewMessageEvent> listener) {
@@ -110,20 +121,20 @@ public class Chat extends PolymerTemplate<Chat.ChatModel> {
      * Clears new message input field from text
      */
     public void clearInput() {
-        getElement().callFunction("clearInput");
+        getElement().callJsFunction("clearInput");
     }
 
     /**
      * Scrolling list of messages to the bottom, where newest messages are
      */
     public void scrollToBottom() {
-        getElement().callFunction("scrollToBottom");
+        getElement().callJsFunction("scrollToBottom");
     }
 
     /**
      * Setting list of messages to chat
      *
-     * @param messages
+     * @param messages  list of messages to chat
      */
     public void setMessages(List<Message> messages){
         getModel().setMessages(messages);
