@@ -6,12 +6,14 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.componentfactory.model.Message;
 import com.vaadin.flow.demo.DemoView;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.router.RouteAlias;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 @Route("chat")
+@RouteAlias("")
 public class ChatView extends DemoView {
     private static int MESSAGE_LOAD_NUMBER = 100;
     private int messageStartNum1 = 0;
